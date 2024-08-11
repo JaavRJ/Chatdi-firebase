@@ -1,0 +1,45 @@
+.footer {
+
+    @media (min-width: 768px) {
+
+        
+        .text {
+            text-align: left;
+        }
+        .icons {
+            text-align: right;
+        }
+    }
+
+    @media (max-width: 767px) {
+
+
+        .text {
+            text-align: center;
+        }
+        .icons {
+            text-align: center;
+        }
+    }
+}
+
+.hover-pointer:hover {
+
+    cursor:pointer;
+}
+
+.login {
+    .item:hover {
+
+        cursor: pointer;
+        color: white!important;
+        background-color: var(--bs-primary);
+    }
+}
+
+$secondary: #9472f0;
+$primary: #a88fedd2;
+$dark: #d3c7f3;
+$light: #FCF8E8;
+
+@import "../../node_modules/bootstrap/scss/bootstrap";
