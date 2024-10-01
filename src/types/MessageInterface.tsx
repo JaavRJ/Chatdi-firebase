@@ -1,6 +1,7 @@
 
 export interface MessageInterface {
     msg: {
+        reactions: JSX.Element[]
         msg: any,
         type: string,
         sendDate: number
@@ -8,6 +9,6 @@ export interface MessageInterface {
     author: any,
     key: string,
     idmsg: string,
-    chatId: string 
-
+    chatId: string,
+    showUsername: boolean
 }

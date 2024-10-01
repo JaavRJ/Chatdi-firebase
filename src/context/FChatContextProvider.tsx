@@ -23,7 +23,7 @@ const FChatContextProvider = (props: FChatProps) => {
         auth.onAuthStateChanged ( (user) => {
 
             if (user) {
-
+                console.log(user)
                 const database = getDatabase ();
                 const userRef = ref (database, `users/${user.uid}`);
                 onValue (userRef, (snapshot) => {
@@ -34,9 +34,12 @@ const FChatContextProvider = (props: FChatProps) => {
                         setUserData ({
                             uid: u.uid,
                             email: u.email,
-                            username: u.name,
+                            username: u.username,
                             avatar: u.avatar,
-                            name: u.name
+                            name: u.name,
+                            bio: u.bio,
+                            website: u.website,
+                            socialLinks: u.socialLinks
                         });
                     } else {
 
@@ -45,7 +48,8 @@ const FChatContextProvider = (props: FChatProps) => {
                             email: user.email ? user.email : '',
                             username: user.email ? user.email.substring (0, user.email.indexOf ('@')) : '',
                             avatar: user.photoURL ? user.photoURL : '',
-                            name: user.displayName ? user.displayName : ''
+                            name: user.displayName ? user.displayName : '',
+                            //socialLinks: user.socialLinks ? user.socialLinks: ''
                         })
                     }
                 });

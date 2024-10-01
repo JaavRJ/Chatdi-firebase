@@ -55,8 +55,7 @@ export const ChatSelection = () => {
                         const [userId1, userId2] = chatId.split('_');
                         const otherUserId = userId1 === userData.uid ? userId2 : userId1;
 
-                        console.log(userId1)
-                        console.log(userId2)
+                    
                         // Contar los mensajes no leídos solo si el usuario está en el chat
                         const unreadCount = Object.values(chat.messages || {}).filter(
                             (msg: any) => (msg.authorUid !== userData.uid && !msg.read) &&
@@ -125,6 +124,19 @@ export const ChatSelection = () => {
 
     return (
         <div className="container-global">
+            <div className="announcement-banner">
+                <h3>¡Novedades!</h3>
+                <ul>
+                    <li>Nueva función de notificaciones de mensajes no leídos.</li>
+                    <li>Mejora en la interfaz de usuario con un diseño más atractivo y responsivo.</li>
+                    <li>Actualización del perfil de usuario con soporte para redes sociales.</li>
+                    <li>Ahora puedes agregar una biografía y enlaces a tu perfil.</li>
+                    <li>Arreglo de diseño de mensajes, ahora solo sale una vez el nombre.</li>
+                    <li>Da click en el nombre del usuario en el chat!</li>
+                    <li>Sistema de reacciones, dale doble click al mensaje!</li>
+                </ul>
+            </div>
+
             <div className="chat-selection-container">
                 <h2 className="chat-selection-title">Selecciona un Usuario para chatear</h2>
                 {loading ? (
@@ -146,5 +158,6 @@ export const ChatSelection = () => {
                 )}
             </div>
         </div>
+
     );
 };

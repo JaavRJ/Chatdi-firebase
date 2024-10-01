@@ -1,0 +1,99 @@
+.reactions {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 5px;
+  }
+  
+  .emoji-container {
+    display: flex;
+  }
+  
+  .reaction-emoji {
+    margin-right: 5px;
+    font-size: 20px;
+  }
+  
+  .reaction-options {
+    display: flex;
+    margin-top: 5px;
+  }
+  
+  .reaction-options button {
+    background: none;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+  }
+
+  .emoji-picker {
+    position: absolute;
+    top: 50%; /* Centramos verticalmente respecto al mensaje */
+    transform: translateY(-50%); /* Centrar verticalmente el menú */
+    display: flex;
+    justify-content: space-around;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 8px;
+    z-index: 1000;
+    max-width: fit-content;
+}
+
+.emoji-picker.sent {
+    right: calc(100% + 10px); /* Ajustar para los mensajes enviados (izquierda) */
+    left: auto;
+}
+
+.emoji-picker.received {
+    left: calc(100% + 10px); /* Ajustar para los mensajes recibidos (derecha) */
+    right: auto;
+}
+
+.emoji-picker span {
+    font-size: px;
+    padding: 2px;
+    cursor: pointer;
+}
+
+.emoji-picker span img{
+    width: 20px;
+}
+.emoji-picker span:hover {
+    transform: scale(1.2);
+}
+
+  
+.emoji-container {
+    position: absolute;
+    bottom: -10px;
+    left: -10px;
+    display: flex;
+    gap: 5px;
+}
+
+.emoji-bubble {
+    border-radius: 50%;
+    padding: 5px;
+}
+
+.emoji-bubble img{
+    width: 20px;
+}
+
+.no-select {
+  user-select: none; /* Desactiva la selección del contenido */
+  -webkit-user-select: none; /* Para navegadores basados en WebKit */
+  -moz-user-select: none; /* Para Firefox */
+  -ms-user-select: none; /* Para Internet Explorer/Edge */
+  max-height: 70%;
+}
+  
+.no-drag {
+  -webkit-user-drag: none; /* Evita que la imagen sea arrastrada en navegadores basados en WebKit */
+}
+  
+
+.no-link-style {
+  text-decoration: none;
+  color: inherit;
+}

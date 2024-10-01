@@ -42,6 +42,7 @@ export const Chat = () => {
           newMessages.push({ key, msg, author });
         });
 
+        console.log(newMessages)
         setMessages(newMessages);
         setLoading(false);
       });
@@ -75,10 +76,23 @@ export const Chat = () => {
         )}
         {!loading && messages.length > 0 && (
           <div id="scroll" className="scroll" style={{ overflowY: "scroll" }}>
-            {messages.map((elem) => (
-              <Message msg={elem.msg} author={elem.author} key={elem.key} idmsg={elem.key} chatId={chatId!} />
-            ))}
+              {messages.map((elem, index) => {
+                  const prevMsg = messages[index - 1];
+                  const showUsername = !prevMsg || prevMsg.msg.authorUid !== elem.msg.authorUid;
+                  
+                  return (
+                      <Message 
+                          msg={elem.msg} 
+                          author={elem.author} 
+                          key={elem.key} 
+                          idmsg={elem.key} 
+                          chatId={chatId!} 
+                          showUsername={showUsername}
+                      />
+                  );
+              })}
           </div>
+      
         )}
         {!loading && <FormMessage chatId={chatId!} />}
       </div>

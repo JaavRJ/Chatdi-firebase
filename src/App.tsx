@@ -5,6 +5,7 @@ import { Header } from "./components/Header";
 import { Login } from "./components/Login";
 import { About } from "./components/About";
 import { Profile } from "./components/Profile";
+import { UserProfile } from "./components/User";
 import { ChatSelection } from "./components/SelectUser";
 import { useContext } from "react";
 import FChatContext from "./context/FChatContext";
@@ -20,6 +21,7 @@ function App () {
           <Route path="/login" element={<Login />} />
           <Route path="/about" element={<About />} />
           <Route path="/profile" element={<Profile />} />
+          <Route path="/user/:userId" element={<UserProfile />} />
 
           {/* Ruta para seleccionar el chat */}
           {userData ? (

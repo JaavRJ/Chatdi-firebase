@@ -1,0 +1,90 @@
+/* Profile.css */
+
+.profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 20px;
+}
+
+.profile-form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 1200px;
+}
+
+@media (min-width: 768px) {
+    .profile-form {
+        flex-direction: row;
+    }
+}
+
+.profile-image-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.avatar-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.profile-details {
+    flex: 2;
+    padding-left: 20px;
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    .profile-details {
+        padding-left: 0;
+    }
+}
+
+.form-label {
+    font-weight: bold;
+}
+
+.social-icon-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.social-icon {
+    font-size: 24px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.social-input {
+    position: absolute;
+    top: 30px;
+    left: 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding: 5px 10px;
+    box-sizing: border-box;
+    z-index: 10;
+}
+
+.social-icon-container:nth-last-child(-n+2) .social-input {
+    left: auto;  /* Resetea la posición izquierda */
+    right: 0;    /* Alinea el input al borde derecho del contenedor */
+}
+
+.social-icon-container:nth-last-child(3) .social-input {
+    left: -80px;    /* Alinea el input al borde derecho del contenedor */
+}
+
+
+.alert {
+    margin-top: 10px;
+}

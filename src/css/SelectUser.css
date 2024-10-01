@@ -67,7 +67,7 @@
 }
 
 .notification-badge {
-    background-color: red;
+    background-color: rgb(127, 86, 232);
     color: white;
     border-radius: 50%;
     padding: 5px 10px;
@@ -75,4 +75,30 @@
     margin-left: 10px;
     display: inline-block;
     vertical-align: middle;
+}
+
+/* Anuncio de novedades */
+.announcement-banner {
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+.announcement-banner h3 {
+    margin: 0;
+    font-size: 1.5rem;
+    color: #721c24;
+}
+
+.announcement-banner ul {
+    list-style: disc inside;
+    margin: 10px 0 0;
+    padding-left: 20px;
+    color: #721c24;
+}
+
+.announcement-banner li {
+    margin-bottom: 5px;
 }
